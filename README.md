@@ -1,69 +1,72 @@
-# LINE Notify Login Notification
+[English](README_EN.md)
+# LINE Notify ログイン通知
 
-This is a Python script that uses the LINE Notify API to send a daily login notification. It sends a message reminder to a specified LINE account at a specified time every day.
+これは、LINE Notify APIを使用して、毎日指定した時間に特定のLINEアカウントにログイン通知を送信するPythonスクリプトです。
 
-## Prerequisites
+## 前提条件
 
-Before using this script, make sure you have the following:
+このスクリプトを使用する前に、以下の事項を確認してください。
 
-- Python 3.x installed on your machine.
-- The `requests` library installed. You can install it using pip:
+- ローカルマシンにPython 3.xがインストールされていること。
+- `requests`ライブラリがインストールされていること。pipを使用してインストールできます。
   ```
   pip install requests
   ```
 
-## Getting Started
+## はじめに
 
-1. Clone or download the script to your local machine.
+1. スクリプトをクローンするか、ローカルマシンにダウンロードします。
 
-2. Obtain a LINE Notify access token:
-   - Visit the [LINE Notify](https://notify-bot.line.me/) website.
-   - Login with your LINE account.
-   - Create a new token by clicking on the "Generate token" button.
-   - Give it a name and select the desired notification settings.
-   - Copy the generated access token.
+2. LINE Notifyのアクセストークンを取得します。
+   - [LINE Notify](https://notify-bot.line.me/)のウェブサイトにアクセスします。
+   - LINEアカウントでログインします。
+   - 「トークンを発行する」ボタンをクリックして新しいトークンを作成します。
+   - トークンに名前を付け、必要な通知設定を選択します。
+   - 生成されたアクセストークンをコピーします。
 
-3. Open the script in a text editor and replace the `access_token` variable value with your own access token.
+3. テキストエディタでスクリプトを開き、`access_token`変数の値を自分のアクセストークンに置き換えます。
    ```python
    self.access_token = 'YOUR_ACCESS_TOKEN'
    ```
 
-## Usage
+## 使用方法
 
-To use the script, follow these steps:
+スクリプトを使用するには、以下の手順に従ってください。
 
-1. Open a terminal or command prompt.
+1. ターミナルまたはコマンドプロンプトを開きます。
 
-2. Navigate to the directory where the script is located.
+2. スクリプトが保存されているディレクトリに移動します。
 
-3. Run the script using the following command:
+3. 次のコマンドを使用してスクリプトを実行します。
    ```
    python main.py
    ```
-   You can also use the docker command:
+   dockerコマンドを使用することもできます。
     ```
     docker-compose build
     docker-compose up
     ```
 
-4. The script will start running and check for login notifications to send at the specified time every day (14:00 in the provided example).
+4. スクリプトが実行され、毎日指定した時間（例では14:00）にログイン通知を送信するかどうかを確認します。
 
-## Customization
+## カスタマイズ
 
-You can customize the script to suit your needs:
+このスクリプトは、ニーズに合わせてカスタマイズすることができます。
 
-- **Change the notification time**: Modify the `schedule.every().day.at("14:00").do(send_login_notification)` line to specify a different time for the login notification.
+- **通知時間の変更**: `schedule.every().day.at("14:00").do(send_login_notification)` の行を変更して、ログイン通知の時間を指定します。
 
-- **Modify the notification message**: Edit the `get_login_notification()` function to change the message content.
+- **通知メッセージの編集**: `get_login_notification()` 関数を編集してメッセージの内容を変更します。
 
-- **Adjust the notification frequency**: By default, the script sends the notification once per day. You can modify the schedule to send notifications more or less frequently.
+- **通知頻度の調整**: デフォルトでは、スクリプトは1日に1回通知を送信します。スケジュールを調整して、通知の頻度を増減させることができます。
 
-- **Extend the functionality**: You can enhance the script by adding additional notifications or integrating it with other services.
+- **機能の拡張**: 他の通知を追加したり、他のサービ
 
-## License
+スと統合するために、スクリプトを拡張することができます。
 
-This script is released under the [MIT License](LICENSE). Feel free to modify and distribute it as needed.
+## ライセンス
 
-## Acknowledgements
+このスクリプトは[MITライセンス](LICENSE)の下で公開されています。必要に応じて、修正や配布を自由に行ってください。
 
-This script utilizes the [LINE Notify API](https://notify-bot.line.me/doc/) to send notifications. Special thanks to the developers of LINE Notify for providing the API service.
+## 謝辞
+
+このスクリプトは、通知を送信するために[LINE Notify API](https://notify-bot.line.me/doc/)を利用しています。LINE Notifyの開発者には、APIサービスの提供に感謝します。
